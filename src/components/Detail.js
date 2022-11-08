@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+// import Upload from "./Upload";
 
 function Detail() {
   return (
@@ -28,6 +29,7 @@ function Detail() {
       </Controls>
       <SubTitle>2018 : 7m : Family, Fantasy, Kids, Animation</SubTitle>
       <Description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero laboriosam doloribus sint perferendis et cupiditate dolor alias quisquam provident mollitia.</Description>
+      {/* <Upload />  this component was just used to import data in firestore*/}
     </Container>
   );
 }
@@ -61,6 +63,7 @@ const ImageTitle = styled.div`
   min-height: 170px;
   width: 35vw;
   min-width: 200px;
+  margin-top: 60px;
 
   img {
     height: 100%;
@@ -132,4 +135,5 @@ const Description = styled.div`
   line-height: 1.4;
   font-size: 20px;
   margin-top: 16px;
+  max-width: 760px;
 `;
