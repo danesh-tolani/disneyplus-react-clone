@@ -1,6 +1,7 @@
 // this file is just for the firebase configuration
 
 import firebase from "firebase/compat/app";
+// import { getAuth, connectWithAuthEmulator, SignInWithEmailAndPassword } from "firebase/compat/auth";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/storage";

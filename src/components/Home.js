@@ -17,6 +17,7 @@ function Home() {
         return { id: doc.id, ...doc.data() };
       });
       dispatch(setmovies(tempMovies));
+      // console.log(tempMovies);
     });
   }, []);
 
