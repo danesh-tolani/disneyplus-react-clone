@@ -28,12 +28,11 @@ function Header() {
     });
   }, []);
 
-  // we are using googleauth as provider whiuhc we are passing in signInwithPopup
+  // we are using googleauth as provider which we are passing in signInwithPopup
   const signIn = () => {
     auth.signInWithPopup(provider).then((result) => {
       let user = result.user;
       navigate("/");
-      // console.log(user.photoURL);
       dispatch(
         setUserLogin({
           name: user.displayName,
