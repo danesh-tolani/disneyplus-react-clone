@@ -24,6 +24,8 @@ function Header() {
           })
         );
         navigate("/");
+      } else {
+        navigate("/login");
       }
     });
   }, []);
@@ -62,12 +64,10 @@ function Header() {
       ) : (
         <>
           <NavMenu>
-            {/* <a> */}
             <Link to="/">
               <img src="/images/home-icon.svg" alt="" />
               <span>HOME</span>
             </Link>
-            {/* </a> */}
             <a>
               <img src="/images/search-icon.svg" alt="" />
               <span>SEARCH</span>
@@ -105,10 +105,20 @@ const Nav = styled.div`
   align-items: center;
   padding: 0 36px;
   overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: 100px;
+    padding: 5px 0px;
+  }
 `;
 
 const Logo = styled.img`
   width: 80px;
+
+  @media (max-width: 768px) {
+    width: 60px;
+  }
 `;
 
 const NavMenu = styled.div`
@@ -117,6 +127,12 @@ const NavMenu = styled.div`
   margin-left: 25px;
   align-items: center;
 
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 10px;
+    row-gap: 10px;
+  }
+
   a {
     display: flex;
     align-items: center;
@@ -124,8 +140,16 @@ const NavMenu = styled.div`
     cursor: pointer;
     text-decoration: none;
 
+    @media (max-width: 768px) {
+      padding: 0 6px;
+    }
+
     img {
       height: 20px;
+
+      @media (max-width: 768px) {
+        height: 10px;
+      }
     }
 
     span {
@@ -133,6 +157,10 @@ const NavMenu = styled.div`
       letter-spacing: 1.42px;
       position: relative;
       color: white;
+
+      @media (max-width: 768px) {
+        font-size: 8px;
+      }
 
       &::after {
         content: "";
@@ -163,6 +191,13 @@ const UserImg = styled.img`
   height: 48px;
   border-radius: 50%;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 24px;
+    height: 24px;
+    margin
+    margin-top: 10px;
+  }
 `;
 
 const Login = styled.div`
@@ -174,11 +209,19 @@ const Login = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
   transition: all 0.3s ease 0s;
   cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+
+  @media (max-width: 768px) {
+    padding: 2px 8px;
+    margin-top: 20px;
+  }
 
   &:hover {
     background-color: #f9f9f9;
     color: #000;
     border-color: transparent;
+    text-decoration: none;
   }
 `;
 
@@ -186,4 +229,8 @@ const LoginContainer = styled.div`
   flex: 2;
   display: flex;
   justify-content: flex-end;
+
+  a {
+    text-decoration: none;
+  }
 `;
